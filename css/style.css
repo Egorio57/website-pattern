@@ -1,0 +1,308 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+body {
+  font-family: "Satoshi-Regular", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #000;
+  background-color: #fff;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1210px;
+  height: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* BANNER */
+
+.banner {
+  background-color: #000;
+  padding: 10px 0;
+}
+
+.banner_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_text {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  flex: 1;
+
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_link {
+  font-family: "Satoshi-Medium", sans-serif;
+  font-weight: 500;
+  text-decoration: underline;
+
+  transition: all 0.7s;
+}
+
+.banner_cancel {
+  cursor: pointer;
+  transition: all 0.7s;
+}
+
+.banner_cancel path:hover {
+  fill: #ebebeb;
+}
+
+.banner-closed {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .banner_text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 568px) {
+  .banner_text p {
+    display: none;
+  }
+}
+
+/* HEADER MENU */
+.headerMenu {
+  padding: 24px 0;
+  position: relative;
+}
+
+.headerMenu_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  margin: 13px 0px;
+}
+
+.header_logo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.headerMenu_list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.headerMenu_link {
+  font-size: 16px;
+}
+
+.headerMenu_link:hover {
+  text-decoration: underline;
+}
+
+.headerMenu_search {
+  padding: 13px 200px 13px 16px;
+  border-radius: 62px;
+  background-color: #f0f0f0;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerMenu_search a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerMenu_search input {
+  background-color: #f0f0f0;
+}
+
+.headerMenu_shop {
+  display: flex;
+  gap: 14px;
+}
+
+.headerMenu_link {
+  display: block;
+  padding: 18px 0;
+
+  position: relative;
+}
+
+.headerMenu_link::before {
+  content: "";
+  position: absolute;
+
+  left: -13px;
+  top: 5px;
+  background-color: var(--main-color-btn);
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  z-index: -1;
+
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.headerMenu_link:hover::before {
+  opacity: 1;
+}
+
+.burger-icons {
+  display: none;
+  width: 60px;
+  height: 60px;
+
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.burger-icons span,
+.burger-icons span::after,
+.burger-icons span::before {
+  content: "";
+  width: 35px;
+  height: 4px;
+
+  background-color: #000;
+  border-radius: 15px;
+  transition: all 0.8s;
+  position: absolute;
+}
+
+.burger-icons span::after {
+  top: 10px;
+}
+
+.burger-icons span::before {
+  bottom: 10px;
+}
+
+.body--burger-menu span::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.body--burger-menu span::before {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+.body--burger-menu span {
+  background-color: transparent;
+}
+
+.headerMenu_shop-mobile {
+  display: none;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .headerMenu_search {
+    padding: 13px 100px 13px 16px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .headerMenu_search {
+    padding: 13px 10px 13px 16px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .headerMenu_search {
+    display: none;
+  }
+  .headerMenu_shop {
+    display: none;
+  }
+
+  .headerMenu_shop-mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 805px) {
+  .burger-icons {
+    display: flex;
+  }
+  .headerMenu_inner nav {
+    display: none;
+  }
+
+  .burgerAndLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  body.body--burger-menu .headerMenu_inner nav {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+
+    background-color: #fff;
+    padding: 20px;
+
+    z-index: 10;
+  }
+
+  body.body--burger-menu .headerMenu_list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  body.body--burger-menu .headerMenu_link {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .headerMenu_inner {
+    gap: 10px;
+  }
+  .header_logo-mobile img {
+    width: 120px;
+    height: 20px;
+  }
+}
+
+/* HERO */
